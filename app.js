@@ -29,6 +29,10 @@ app.get("/produto/:id", function(req, res){
     res.send(`O produto ${produtoId} foi adicionado com sucesso`)
 })
 
+app.get("/foto", function(req, res){
+    res.sendFile(__dirname + "/public/images/foto.jpeg")
+})
+
 app.listen(3000, function(){
     console.log("Minha APP está no ar!")
 });
