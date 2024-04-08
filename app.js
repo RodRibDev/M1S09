@@ -2,6 +2,15 @@ const express = require("express")
 
 const app = express();
 
+const logMetodoURLHora = (req, res, next) => {
+    const horaAtual = new Date().toISOString();
+    console.log(
+      `[${horaAtual}] Nova solicitação recebida para: ${req.method} ${req.originalUrl}`
+      );
+    next();
+};
+app.use(logMetodoURLHora)
+
 app.get("/", function(req, res){
     res.send("APP da aula 09")
 })
