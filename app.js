@@ -23,6 +23,12 @@ app.get("/contato", function(req, res){
     res.send("Entre em contato para maiores informações")
 })
 
+app.get("/produto/:id", function(req, res){
+    const produtoId = req.params.id;
+
+    res.send(`O produto ${produtoId} foi adicionado com sucesso`)
+})
+
 app.listen(3000, function(){
     console.log("Minha APP está no ar!")
 });
